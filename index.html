@@ -3,8 +3,10 @@
 <head>
   <meta charset='UTF-8'>
   <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="nouislider.min.css">
   <script src="jquery.min.js"></script>
   <script src="fabric.min.js"></script>
+  <script src="nouislider.min.js"></script>
   <title>Image Masker</title>
   <link rel="icon" href="images/favicon.png">
 </head>
@@ -32,15 +34,13 @@
 		</div>
 		
 		<div class="button-container">
-		  <!--<button class="color night button" id="dupeMask" onclick="duplicateMask()">复制蒙版(Duplicate)</button>-->
 		  <button class="color night button" id="deleteObject" onclick="deleteObject()">删除蒙版(Delete)</button>
 		  <button type="button" class="color night button" id="undo" onclick="undo()">撤销(Undo)</button>
 		  <button class="color night button" id="downloadMask" onclick="downloadMask()">下载蒙版(Download Mask)</button>
 		</div>
-		
 		<div id="brush" class="button-container">
-		  笔刷大小(Brush size): <br>
-		  <input type="range" min="10" max="70" value="30" class="sliders" id="brushSize">
+		  笔刷大小(Brush size): 
+		  <div id="brushSize" class="sliders"></div>
 		</div>
 	  </fieldset>
 	</div>

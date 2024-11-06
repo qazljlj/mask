@@ -77,7 +77,6 @@ img:hover {
 #brushSize,
 #hue,
 #textSize,
-#brushOpacity,
 #angle {
   display: inline-block;
   -webkit-appearance: none;
@@ -87,7 +86,7 @@ img:hover {
   height: 10px;
   border: none;
   opacity: 0.5;
-  width: 80%;
+  width: 70%;
   padding: 10px;
   transition: 0.5s;
 }
@@ -97,7 +96,6 @@ img:hover {
 #brushSize:hover,
 #hue:hover,
 #textSize:hover,
-#brushOpacity:hover,
 #angle:hover {
   background-color: rgb(236, 212, 192);
 }
@@ -107,7 +105,6 @@ img:hover {
 #brushSize::-webkit-slider-thumb,
 #hue::-webkit-slider-thumb,
 #textSize::-webkit-slider-thumb,
-#brushOpacity::-webkit-slider-thumb,
 #angle::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -127,17 +124,17 @@ img:hover {
 #tools {
   border: 2px solid #555;
   border-radius: 5px;
-  padding: 12px;
+  padding: 5px 5px 35px 5px;
   background: rgb(52, 57, 107);
   line-height: 30px;
   width: 90%;
-  margin: 0 auto 20px auto; /* 底部间距 20px，水平居中 */
+  margin: 0 auto 20px auto; 
 }
 
 #container {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 5px;
   align-items: center;
 }
 
