@@ -236,38 +236,43 @@ function deleteObject() {
 }
 
 function downloadMask() {
-	  var hasMask = false;
-  
+  var hasMask = false;
+
   var tempCanvas = document.createElement('canvas');
   tempCanvas.width = canvas.width;
   tempCanvas.height = canvas.height;
   var tempContext = tempCanvas.getContext('2d');
 
-  
   tempContext.fillStyle = 'rgba(0, 0, 0, 0)';
   tempContext.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
 
-  
   canvas.forEachObject(function(obj) {
     if (!obj.excludeFromExport) { 
-	  hasMask = true;
+      hasMask = true;
       obj.clone(function(clonedObj) {
         clonedObj.render(tempContext);
       });
     }
   });
-  
+
   if (!hasMask) {
     alert('没有蒙版，请先用笔刷创建蒙版。');
     return;
   }
 
-  
-  var dataURL = tempCanvas.toDataURL('image/png');
-  var downloadLink = document.createElement('a');
-  downloadLink.href = dataURL;
-  downloadLink.download = 'mask.png';
+  tempCanvas.toBlob(function(blob) {
+    var url = URL.createObjectURL(blob);
+    var downloadLink = document.createElement('a');
+    downloadLink.href = url;
+    downloadLink.download = 'mask.png';
 
-  // Trigger the download
-  downloadLink.click();
+    // Append the link to the body
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+
+    // Clean up
+    document.body.removeChild(downloadLink);
+    URL.revokeObjectURL(url);
+  });
 }
+
