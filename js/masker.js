@@ -261,18 +261,8 @@ function downloadMask() {
   }
 
   tempCanvas.toBlob(function(blob) {
-    var url = URL.createObjectURL(blob);
-    var downloadLink = document.createElement('a');
-    downloadLink.href = url;
-    downloadLink.download = 'mask.png';
-
-    // Append the link to the body
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-
-    // Clean up
-    document.body.removeChild(downloadLink);
-    URL.revokeObjectURL(url);
+    saveAs(blob, 'mask.png');
   });
 }
+
 
