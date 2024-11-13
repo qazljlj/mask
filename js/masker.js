@@ -133,6 +133,7 @@ function loadSourceImage(baseUrl, externalImage) {
   } else {
     document.getElementById("container").style.display = "grid";
   }
+  brush();
 }
 
 

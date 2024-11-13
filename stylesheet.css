@@ -16,7 +16,7 @@ body {
   padding: 1em;
   width: 90%;
   max-width: 600px;
-  max-height: 50vh;
+  max-height: 30vh;
   background-color: rgb(52, 57, 107);
   transition: 0.3s;
   border-radius: 15px;
@@ -31,13 +31,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 50vh;
 }
 
 /* Media query for smaller screens */
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   #uploadlabel {
-    font-size: 6vw; /* Adjust font size for mobile */
+    font-size: 5vw; /* Adjust font size for mobile */
     max-height: 60vh; /* Adjust max height for better view on mobile */
   }
 }
@@ -148,6 +148,13 @@ img:hover {
   text-align: center;
   transition: 0.5s;
   margin: 5px;
+  font-size: 16px;
+}
+@media (max-width: 1000px) {
+  #tools button {
+    font-size: 26px;
+    padding: 15px;
+  }
 }
 
 #tools button:hover {
